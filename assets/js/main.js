@@ -313,6 +313,16 @@ ctx.stroke();
  ctx.closePath();
     ctx.fill();
 
+
+     ctx.fillStyle = "#3d3a3a";
+   ctx.strokeStyle = "#3b3939";
+    ctx.lineWidth = 6;
+ctx.beginPath();
+ctx.moveTo(340, 280);
+ctx.lineTo(340, 65);
+ctx.stroke();
+ ctx.closePath();
+    ctx.fill();
     // Velas
 
 // ===============================
@@ -341,7 +351,7 @@ ctx.lineTo(200, 230);
 
 // Lado izquierdo curvado hacia adentro
 ctx.quadraticCurveTo(
-    220, 180,   // Punto de control (curva hacia adentro)
+    210, 190,   // Punto de control (curva hacia adentro)
     200, 170    // Regresa al inicio
 );
 
@@ -349,6 +359,68 @@ ctx.closePath();
 ctx.fill();
 ctx.stroke();
 
+// Cabeza
+ctx.beginPath();
+ctx.fillStyle = "#ffffff";
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
+
+ctx.arc(240, 195, 18, 0, Math.PI * 2);
+ctx.fill();
+ctx.stroke();
+
+// Ojo izquierdo
+ctx.beginPath();
+ctx.fillStyle = "#000000";
+ctx.arc(232, 192, 4, 0, Math.PI * 2);
+ctx.fill();
+
+// Ojo derecho
+ctx.beginPath();
+ctx.arc(248, 192, 4, 0, Math.PI * 2);
+ctx.fill();
+
+ctx.beginPath();
+ctx.moveTo(240, 198);
+ctx.lineTo(235, 205);
+ctx.lineTo(245, 205);
+ctx.closePath();
+ctx.fill();
+
+// Base dientes
+ctx.beginPath();
+ctx.fillStyle = "#ffffff";
+ctx.rect(230, 205, 20, 8);
+ctx.fill();
+ctx.stroke();
+
+// Separaciones dientes
+ctx.beginPath();
+ctx.moveTo(235, 205);
+ctx.lineTo(235, 213);
+
+ctx.moveTo(240, 205);
+ctx.lineTo(240, 213);
+
+ctx.moveTo(245, 205);
+ctx.lineTo(245, 213);
+
+ctx.stroke();
+
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 2;
+
+// Hueso 1
+ctx.beginPath();
+ctx.moveTo(220, 215);
+ctx.lineTo(260, 180);
+ctx.stroke();
+
+// Hueso 2
+ctx.beginPath();
+ctx.moveTo(220, 180);
+ctx.lineTo(260, 215);
+ctx.stroke();
 // ===============================
 // VELA RECTANGULAR izquierda
 // ===============================
@@ -422,7 +494,7 @@ ctx.stroke();
 // ===============================
 
 ctx.beginPath();
-ctx.fillStyle = "#f4f1e8";  // Color beige claro
+ctx.fillStyle = "#e10600"
 ctx.strokeStyle = "#000000";
 ctx.lineWidth = 1;
 
@@ -451,6 +523,43 @@ ctx.closePath();
 ctx.fill();
 ctx.stroke();
 
+ctx.beginPath();
+ctx.fillStyle = "#ffffff";
+
+// Parte superior
+ctx.moveTo(220, 85);
+ctx.lineTo(235, 85);
+
+// Curva derecha interna
+ctx.quadraticCurveTo(245, 120, 235, 140);
+
+// Parte inferior
+ctx.lineTo(220, 140);
+
+// Curva izquierda interna
+ctx.quadraticCurveTo(230, 113, 220, 85);
+
+ctx.closePath();
+ctx.fill();
+
+ctx.beginPath();
+ctx.fillStyle = "#ffffff";
+
+// Parte superior
+ctx.moveTo(250, 85);
+ctx.lineTo(265, 85);
+
+// Curva derecha interna
+ctx.quadraticCurveTo(275, 120, 265, 140);
+
+// Parte inferior
+ctx.lineTo(250, 140);
+
+// Curva izquierda interna
+ctx.quadraticCurveTo(260, 113, 250, 85);
+
+ctx.closePath();
+ctx.fill();
 // ===============================
 // VELA RECTANGULAR central superior al superior
 // ===============================
@@ -464,25 +573,255 @@ ctx.lineWidth = 1;
 ctx.moveTo(220, 50);
 
 // Línea superior (recta)
-ctx.lineTo(230, 50);
+ctx.lineTo(270, 50);
 
 // Lado derecho curvado hacia adentro
 ctx.quadraticCurveTo(
-    280, 55,   // Punto de control (mete la curva hacia adentro)
+    280, 58,   // Punto de control (mete la curva hacia adentro)
     270, 70    // Punto inferior derecho
 );
 
 // Línea inferior (recta)
-ctx.lineTo(200, 140);
+ctx.lineTo(205, 70);
 
 // Lado izquierdo curvado hacia adentro
 ctx.quadraticCurveTo(
-    210, 113,   // Punto de control (curva hacia adentro)
-    208, 110    // Regresa al inicio
+    215, 60,   // Punto de control (curva hacia adentro)
+    208, 50    // Regresa al inicio
 );
 
 ctx.closePath();
 ctx.fill();
 ctx.stroke();
 
+
+// ===============================
+// VELA ROJA BASE
+// ===============================
+
+ctx.beginPath();
+ctx.fillStyle = "#e10600"; 
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
+
+ctx.moveTo(295, 180);
+ctx.lineTo(380, 180);
+
+// Lado derecho curvo
+ctx.quadraticCurveTo(400, 210, 380, 240);
+
+ctx.lineTo(295, 240);
+
+// Lado izquierdo curvo
+ctx.quadraticCurveTo(315, 205, 295, 180);
+
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
+
+ctx.beginPath();
+ctx.fillStyle = "#ffffff";
+
+// Borde superior
+ctx.moveTo(310, 180);
+
+// Curva derecha de la franja
+ctx.quadraticCurveTo(330, 210, 310, 240);
+
+// Base inferior
+ctx.lineTo(325, 240);
+
+// Curva izquierda de la franja
+ctx.quadraticCurveTo(345, 210, 325, 180);
+
+ctx.closePath();
+ctx.fill();
+
+ctx.beginPath();
+ctx.fillStyle = "#ffffff";
+
+ctx.moveTo(335, 180);
+ctx.quadraticCurveTo(355, 210, 335, 240);
+
+ctx.lineTo(350, 240);
+ctx.quadraticCurveTo(370, 210, 350, 180);
+
+ctx.closePath();
+ctx.fill();
+
+ctx.beginPath();
+ctx.fillStyle = "#ffffff";
+
+ctx.moveTo(360, 180);
+ctx.quadraticCurveTo(380, 210, 360, 240);
+
+ctx.lineTo(372, 240);
+ctx.quadraticCurveTo(392, 210, 372, 180);
+
+ctx.closePath();
+ctx.fill();
+
+ctx.beginPath();
+ctx.fillStyle = "#e10600"; 
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
+
+ctx.moveTo(315, 80);
+ctx.lineTo(365, 80);
+
+// Lado derecho curvo
+ctx.quadraticCurveTo(380, 97, 365, 115);
+
+ctx.lineTo(315, 115);
+
+// Lado izquierdo curvo
+ctx.quadraticCurveTo(320, 110, 320, 95);
+
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
+
+ctx.beginPath();
+ctx.fillStyle = "#ffffff";
+
+// Parte superior
+ctx.moveTo(325, 80);
+
+// Curva derecha (misma lógica que la vela principal)
+ctx.quadraticCurveTo(340, 97, 325, 115);
+
+// Parte inferior
+ctx.lineTo(335, 115);
+
+// Curva izquierda
+ctx.quadraticCurveTo(350, 97, 335, 80);
+
+ctx.closePath();
+ctx.fill();
+
+ctx.beginPath();
+ctx.fillStyle = "#ffffff";
+
+// Parte superior
+ctx.moveTo(345, 80);
+
+// Curva derecha
+ctx.quadraticCurveTo(360, 97, 345, 115);
+
+// Parte inferior
+ctx.lineTo(355, 115);
+
+// Curva izquierda
+ctx.quadraticCurveTo(370, 97, 355, 80);
+
+ctx.closePath();
+ctx.fill();
+
+ctx.beginPath();
+ctx.fillStyle = "#ffffff";
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
+
+// Parte superior (5px debajo de la vela roja pequeña)
+ctx.moveTo(300, 120);
+ctx.lineTo(380, 120);
+
+// Curva derecha
+ctx.quadraticCurveTo(400, 142, 380, 165);
+
+// Parte inferior
+ctx.lineTo(300, 165);
+
+// Curva izquierda
+ctx.quadraticCurveTo(320, 142, 300, 120);
+
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
+
+// Cabeza
+ctx.beginPath();
+ctx.fillStyle = "#ffffff";
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
+
+ctx.arc(340, 140, 15, 0, Math.PI * 2);
+ctx.fill();
+ctx.stroke();
+
+// Ojo izquierdo
+ctx.beginPath();
+ctx.fillStyle = "#000000";
+ctx.arc(334, 138, 3, 0, Math.PI * 2);
+ctx.fill();
+
+// Ojo derecho
+ctx.beginPath();
+ctx.arc(346, 138, 3, 0, Math.PI * 2);
+ctx.fill();
+
+ctx.beginPath();
+ctx.moveTo(340, 142);
+ctx.lineTo(337, 147);
+ctx.lineTo(343, 147);
+ctx.closePath();
+ctx.fill();
+
+ctx.beginPath();
+ctx.fillStyle = "#ffffff";
+ctx.rect(334, 148, 12, 5);
+ctx.fill();
+ctx.stroke();
+
+// Líneas verticales dientes
+ctx.beginPath();
+ctx.moveTo(338, 148);
+ctx.lineTo(338, 153);
+
+ctx.moveTo(342, 148);
+ctx.lineTo(342, 153);
+
+ctx.stroke();
+
+// Hueso diagonal 1
+ctx.beginPath();
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 2;
+ctx.moveTo(325, 155);
+ctx.lineTo(355, 125);
+ctx.stroke();
+
+// Hueso diagonal 2
+ctx.beginPath();
+ctx.moveTo(325, 125);
+ctx.lineTo(355, 155);
+ctx.stroke();
+
+// Rectángulo naranja
+ctx.beginPath();
+ctx.fillStyle = "#f28c00"; // naranja
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 2;
+
+ctx.rect(100, 100, 80, 50); // x, y, ancho, alto
+ctx.fill();
+ctx.stroke();
+
+
+
+ctx.strokeStyle = "#ffd400"; // amarillo
+ctx.lineWidth = 6;
+ctx.lineCap = "round";
+
+// Línea diagonal 1
+ctx.beginPath();
+ctx.moveTo(115, 110);
+ctx.lineTo(165, 140);
+ctx.stroke();
+
+// Línea diagonal 2
+ctx.beginPath();
+ctx.moveTo(165, 110);
+ctx.lineTo(115, 140);
+ctx.stroke();
 }
