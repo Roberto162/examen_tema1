@@ -85,6 +85,73 @@ ctx.beginPath();
     ctx.fill();
     ctx.stroke();
 
+ // =====================
+// ANCLA
+// =====================
+    // function ancla
+    ctx.beginPath();
+   ctx.fillStyle = "#8b8b8b";
+   ctx.strokeStyle = "#000000";
+    ctx.lineWidth = 1;
+
+    ctx.moveTo(325, 325);
+    ctx.lineTo(350, 325);
+    ctx.lineTo(337, 335);
+
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+
+
+    /* Círculo superior */
+    ctx.fillStyle = "#8b8b8b";
+   ctx.strokeStyle = "#000000";
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.arc(338, 307, 3, 0, Math.PI * 2);
+    ctx.stroke();
+     ctx.closePath();
+    ctx.fill();
+
+/* Línea vertical */
+ctx.fillStyle = "#8b8b8b";
+   ctx.strokeStyle = "#929292";
+    ctx.lineWidth = 3;
+ctx.beginPath();
+ctx.moveTo(338, 307);
+ctx.lineTo(338, 327);
+ctx.stroke();
+ ctx.closePath();
+    ctx.fill();
+
+
+    // =====================
+// POPA (estructura gris)
+// =====================
+ // function triangulo3
+    ctx.beginPath();
+    ctx.fillStyle = "#1f4fd1"; 
+    ctx.strokeStyle = "#000000";
+    ctx.lineWidth = 1;
+
+    ctx.moveTo(390, 280);
+    ctx.lineTo(460, 259);
+    ctx.lineTo(400, 310);
+
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.fillStyle = "#443d3d";
+   ctx.strokeStyle = "#494646";
+    ctx.lineWidth = 2;
+ctx.beginPath();
+ctx.moveTo(390, 280);
+ctx.lineTo(485, 252);
+ctx.stroke();
+ ctx.closePath();
+    ctx.fill();
+
 
     // ===== MAR FILA TRASERA =====
 
@@ -214,5 +281,47 @@ ctx.lineTo(470, 440);
 ctx.closePath();
 ctx.fill();
 ctx.stroke();
+
+//Mastiles
+ctx.fillStyle = "#3d3a3a";
+   ctx.strokeStyle = "#3b3939";
+    ctx.lineWidth = 4;
+ctx.beginPath();
+ctx.moveTo(80, 255);
+ctx.lineTo(80, 210);
+ctx.stroke();
+ ctx.closePath();
+    ctx.fill();
+
+    ctx.fillStyle = "#3d3a3a";
+   ctx.strokeStyle = "#3b3939";
+    ctx.lineWidth = 6;
+ctx.beginPath();
+ctx.moveTo(150, 255);
+ctx.lineTo(150, 75);
+ctx.stroke();
+ ctx.closePath();
+    ctx.fill();
+     
+    ctx.fillStyle = "#3d3a3a";
+   ctx.strokeStyle = "#3b3939";
+    ctx.lineWidth = 6;
+ctx.beginPath();
+ctx.moveTo(245, 280);
+ctx.lineTo(245, 25);
+ctx.stroke();
+ ctx.closePath();
+    ctx.fill();
+
+
+    ctx.fillStyle = "#3d3a3a";
+   ctx.strokeStyle = "#3b3939";
+    ctx.lineWidth = 6;
+ctx.beginPath();
+ctx.moveTo(350, 280);
+ctx.lineTo(350, 75);
+ctx.stroke();
+ ctx.closePath();
+    ctx.fill();
 
 }
