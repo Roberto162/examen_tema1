@@ -85,4 +85,134 @@ ctx.beginPath();
     ctx.fill();
     ctx.stroke();
 
+
+    // ===== MAR FILA TRASERA =====
+
+// Ola 1
+ctx.beginPath();
+ctx.fillStyle = "#62aee0";
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
+
+ctx.moveTo(30, 400);
+ctx.lineTo(80, 360);
+ctx.lineTo(120, 400);
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
+
+// Ola 2
+ctx.beginPath();
+ctx.fillStyle = "#7ab6df";
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
+
+ctx.moveTo(105, 400);
+ctx.lineTo(170, 360);
+ctx.lineTo(222, 400);
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
+
+// Ola 3
+ctx.beginPath();
+ctx.fillStyle = "#62cde0";
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
+
+ctx.moveTo(170, 400);
+ctx.lineTo(270, 350);
+ctx.lineTo(320, 400);
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
+
+// Ola 4
+ctx.beginPath();
+ctx.fillStyle = "#92e2f0";
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
+
+ctx.moveTo(280, 400);
+ctx.lineTo(350, 350);
+ctx.lineTo(400, 400);
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
+
+// Ola 5
+ctx.beginPath();
+ctx.fillStyle = "#65a2e7";
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
+
+ctx.moveTo(360, 400);
+ctx.lineTo(430, 350);
+ctx.lineTo(480, 400);
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
+
+// ===== MAR FILA FRONTAL =====
+
+// Ola 1
+ctx.beginPath();
+ctx.fillStyle = "#1abc9c";
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
+ctx.moveTo(10, 440);
+ctx.lineTo(83, 380);
+ctx.lineTo(140, 440);
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
+
+// Ola 2
+ctx.beginPath();
+ctx.fillStyle = "#2c97aa";
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
+ctx.moveTo(80, 440);
+ctx.lineTo(165, 375);
+ctx.lineTo(260, 440);
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
+
+// Ola 3
+ctx.beginPath();
+ctx.fillStyle = "#1abc9c";
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
+ctx.moveTo(180, 440);
+ctx.lineTo(270, 380);
+ctx.lineTo(320, 440);
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
+
+// Ola 4
+ctx.beginPath();
+ctx.fillStyle = "#248370";
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
+ctx.moveTo(230, 440);
+ctx.lineTo(330, 380);
+ctx.lineTo(410, 440);
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
+
+// Ola 5
+ctx.beginPath();
+ctx.fillStyle = "#48b889";
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
+ctx.moveTo(330, 440);
+ctx.lineTo(430, 380);
+ctx.lineTo(470, 440);
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
+
 }
