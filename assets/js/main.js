@@ -953,6 +953,57 @@ ctx.moveTo(266, 28);
 ctx.lineTo(249, 36);
 ctx.stroke();
 
+//PAISAJE
+// 7777777777777777777777
+// ☀️ SOL
+ctx.beginPath();
+ctx.fillStyle = "#f4d03f"; // amarillo suave
+ctx.arc(460, 40, 30, 0, Math.PI * 2);
+ctx.fill();
 
+// ☁️ NUBE 1
+ctx.beginPath();
+ctx.fillStyle = "#bfbfbf";
+
+// Círculos que forman la nube
+ctx.arc(120, 30, 20, 0, Math.PI * 2);
+ctx.arc(140, 30, 25, 0, Math.PI * 2);
+ctx.arc(165, 30, 20, 0, Math.PI * 2);
+ctx.arc(145, 33, 25, 0, Math.PI * 2);
+
+ctx.fill();
+
+// ☁️ NUBE 2
+ctx.beginPath();
+ctx.fillStyle = "#bfbfbf";
+
+ctx.arc(50, 100, 15, 0, Math.PI * 2);
+ctx.arc(65, 95, 18, 0, Math.PI * 2);
+ctx.arc(80, 100, 15, 0, Math.PI * 2);
+
+ctx.fill();
+
+// ☁️ NUBE 3
+ctx.beginPath();
+ctx.fillStyle = "#bfbfbf";
+
+ctx.arc(410, 80, 18, 0, Math.PI * 2);
+ctx.arc(440, 70, 22, 0, Math.PI * 2);
+ctx.arc(465, 80, 18, 0, Math.PI * 2);
+ctx.arc(440, 90, 20, 0, Math.PI * 2);
+
+ctx.fill();
+
+// ☁️ NUBE 4
+ctx.beginPath();
+ctx.fillStyle = "#bfbfbf";
+
+ctx.arc(330, 40, 15, 0, Math.PI * 2);
+ctx.arc(340, 35, 18, 0, Math.PI * 2);
+ctx.arc(360, 40, 15, 0, Math.PI * 2);
+
+ctx.fill();
+
+//PERSONAS
 
 }
