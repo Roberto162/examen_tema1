@@ -323,7 +323,96 @@ ctx.lineTo(340, 65);
 ctx.stroke();
  ctx.closePath();
     ctx.fill();
-    // Velas
+
+//SOGAS
+ctx.fillStyle = "#3d3a3a";
+   ctx.strokeStyle = "#3b3939";
+    ctx.lineWidth = 1;
+ctx.beginPath();
+ctx.moveTo(80, 240);
+ctx.lineTo(150, 80);
+ctx.stroke();
+ ctx.closePath();
+    ctx.fill();
+
+    ctx.fillStyle = "#3d3a3a";
+   ctx.strokeStyle = "#3b3939";
+    ctx.lineWidth = 1;
+ctx.beginPath();
+ctx.moveTo(250, 40);
+ctx.lineTo(150, 90);
+ctx.stroke();
+ ctx.closePath();
+    ctx.fill();
+ctx.fillStyle = "#3d3a3a";
+   ctx.strokeStyle = "#3b3939";
+    ctx.lineWidth = 1;
+ctx.beginPath();
+ctx.moveTo(248, 45);
+ctx.lineTo(340, 75);
+ctx.stroke();
+ ctx.closePath();
+    ctx.fill();
+
+    ctx.fillStyle = "#3d3a3a";
+   ctx.strokeStyle = "#3b3939";
+    ctx.lineWidth = 1;
+ctx.beginPath();
+ctx.moveTo(170, 270);
+ctx.lineTo(250, 90);
+ctx.stroke();
+ ctx.closePath();
+    ctx.fill();
+
+    ctx.fillStyle = "#3d3a3a";
+   ctx.strokeStyle = "#3b3939";
+    ctx.lineWidth = 1;
+ctx.beginPath();
+ctx.moveTo(280, 280);
+ctx.lineTo(350, 90);
+ctx.stroke();
+ ctx.closePath();
+    ctx.fill();
+
+    ctx.fillStyle = "#3d3a3a";
+   ctx.strokeStyle = "#3b3939";
+    ctx.lineWidth = 1;
+ctx.beginPath();
+ctx.moveTo(365, 280);
+ctx.lineTo(400, 230);
+ctx.stroke();
+ ctx.closePath();
+    ctx.fill();
+
+ctx.fillStyle = "#3d3a3a";
+   ctx.strokeStyle = "#3b3939";
+    ctx.lineWidth = 1;
+ctx.beginPath();
+ctx.moveTo(400, 165);
+ctx.lineTo(340, 110);
+ctx.stroke();
+ ctx.closePath();
+    ctx.fill();
+
+ctx.fillStyle = "#3d3a3a";
+   ctx.strokeStyle = "#3b3939";
+    ctx.lineWidth = 1;
+ctx.beginPath();
+ctx.moveTo(460, 230);
+ctx.lineTo(485, 253);
+ctx.stroke();
+ ctx.closePath();
+    ctx.fill();
+
+ctx.fillStyle = "#3d3a3a";
+   ctx.strokeStyle = "#3b3939";
+    ctx.lineWidth = 1;
+ctx.beginPath();
+ctx.moveTo(485, 253);
+ctx.lineTo(338, 70);
+ctx.stroke();
+ ctx.closePath();
+    ctx.fill();
 
 // ===============================
 // VELA RECTANGULAR central
@@ -797,31 +886,73 @@ ctx.moveTo(325, 125);
 ctx.lineTo(355, 155);
 ctx.stroke();
 
-// Rectángulo naranja
+// function triangulo vela
+    ctx.beginPath();
+    ctx.fillStyle = "#f4f1e8";  
+    ctx.strokeStyle = "#000000";
+    ctx.lineWidth = 1;
+
+    ctx.moveTo(400, 165);
+    ctx.lineTo(400, 230);
+    ctx.lineTo(460, 230);
+
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+
+// bandera amarilla
 ctx.beginPath();
-ctx.fillStyle = "#f28c00"; // naranja
+ctx.fillStyle = "#f28c00";
 ctx.strokeStyle = "#000000";
 ctx.lineWidth = 2;
 
-ctx.rect(100, 100, 80, 50); // x, y, ancho, alto
+// Bandera izquierda del mástil
+ctx.rect(20, 213, 60, 30);
 ctx.fill();
 ctx.stroke();
 
-
-
-ctx.strokeStyle = "#ffd400"; // amarillo
-ctx.lineWidth = 6;
+ctx.strokeStyle = "#ffd400";
+ctx.lineWidth = 5;
 ctx.lineCap = "round";
 
-// Línea diagonal 1
+// Diagonal 1
 ctx.beginPath();
-ctx.moveTo(115, 110);
-ctx.lineTo(165, 140);
+ctx.moveTo(30, 220);
+ctx.lineTo(70, 237);
 ctx.stroke();
 
-// Línea diagonal 2
+// Diagonal 2
 ctx.beginPath();
-ctx.moveTo(165, 110);
-ctx.lineTo(115, 140);
+ctx.moveTo(70, 220);
+ctx.lineTo(30, 237);
 ctx.stroke();
+
+// Bandera negra
+ctx.beginPath();
+ctx.fillStyle = "#000000";
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 2;
+
+ctx.rect(245, 25, 25, 14);
+ctx.fill();
+ctx.stroke();
+
+ctx.strokeStyle = "#ffffff";
+ctx.lineWidth = 2;
+ctx.lineCap = "round";
+
+// Diagonal 1
+ctx.beginPath();
+ctx.moveTo(249, 28);
+ctx.lineTo(266, 36);
+ctx.stroke();
+
+// Diagonal 2
+ctx.beginPath();
+ctx.moveTo(266, 28);
+ctx.lineTo(249, 36);
+ctx.stroke();
+
+
+
 }
