@@ -85,6 +85,20 @@ ctx.beginPath();
     ctx.fill();
     ctx.stroke();
 
+     // function triangulo junto al barco
+    ctx.beginPath();
+    ctx.fillStyle = "#a82828"; 
+    ctx.strokeStyle = "#000000";
+    ctx.lineWidth = 1;
+
+    ctx.moveTo(110, 290);
+    ctx.lineTo(80, 360);
+    ctx.lineTo(130, 360);
+
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+
  // =====================
 // ANCLA
 // =====================
@@ -1005,5 +1019,276 @@ ctx.arc(360, 40, 15, 0, Math.PI * 2);
 ctx.fill();
 
 //PERSONAS
+// PIRATA 1 (20px)
+
+// Cabeza
+ctx.beginPath();
+ctx.fillStyle = "#000000";
+ctx.arc(120, 239, 4, 0, Math.PI * 2);
+ctx.fill();
+
+// Cuerpo
+ctx.beginPath();
+ctx.lineWidth = 2;
+ctx.strokeStyle = "#000000";
+ctx.moveTo(120, 243);
+ctx.lineTo(120, 252);
+ctx.stroke();
+
+// Brazos
+ctx.beginPath();
+ctx.moveTo(112, 246);
+ctx.lineTo(128, 246);
+ctx.stroke();
+
+// Piernas (terminan en 255)
+ctx.beginPath();
+ctx.moveTo(120, 252);
+ctx.lineTo(114, 255);
+
+ctx.moveTo(120, 252);
+ctx.lineTo(126, 255);
+ctx.stroke();
+
+// Sombrero
+ctx.fillRect(114, 232, 12, 4);
+
+// PIRATA 2
+
+// Cabeza
+ctx.beginPath();
+ctx.fillStyle = "#f4c2c2";
+ctx.arc(140, 239, 4, 0, Math.PI * 2);
+ctx.fill();
+
+// Pañuelo
+ctx.fillStyle = "#e10600";
+ctx.fillRect(136, 232, 8, 4);
+
+// Cuerpo
+ctx.beginPath();
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 2;
+ctx.moveTo(140, 243);
+ctx.lineTo(140, 252);
+ctx.stroke();
+
+// Brazos
+ctx.beginPath();
+ctx.moveTo(132, 246);
+ctx.lineTo(148, 246);
+ctx.stroke();
+
+// Piernas
+ctx.beginPath();
+ctx.moveTo(140, 252);
+ctx.lineTo(134, 255);
+
+ctx.moveTo(140, 252);
+ctx.lineTo(146, 255);
+ctx.stroke();
+
+// PIRATA 3
+
+// Cabeza
+ctx.beginPath();
+ctx.fillStyle = "#f4c2c2";
+ctx.arc(190, 264, 4, 0, Math.PI * 2);
+ctx.fill();
+
+// Cuerpo azul
+ctx.beginPath();
+ctx.strokeStyle = "#1f4e79";
+ctx.lineWidth = 3;
+ctx.moveTo(190, 268);
+ctx.lineTo(190, 277);
+ctx.stroke();
+
+// Brazos
+ctx.beginPath();
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 2;
+ctx.moveTo(182, 271);
+ctx.lineTo(198, 271);
+ctx.stroke();
+
+// Piernas
+ctx.beginPath();
+ctx.moveTo(190, 277);
+ctx.lineTo(184, 280);
+
+ctx.moveTo(190, 277);
+ctx.lineTo(196, 280);
+ctx.stroke();
+
+// PIRATA 4
+
+// Cabeza
+ctx.beginPath();
+ctx.fillStyle = "#000000";
+ctx.arc(260, 264, 4, 0, Math.PI * 2);
+ctx.fill();
+
+// Cuerpo
+ctx.beginPath();
+ctx.lineWidth = 2;
+ctx.strokeStyle = "#000000";
+ctx.moveTo(260, 268);
+ctx.lineTo(260, 277);
+ctx.stroke();
+
+// Brazos
+ctx.beginPath();
+ctx.moveTo(252, 271);
+ctx.lineTo(268, 271);
+ctx.stroke();
+
+// Piernas (terminan en 280)
+ctx.beginPath();
+ctx.moveTo(260, 277);
+ctx.lineTo(254, 280);
+
+ctx.moveTo(260, 277);
+ctx.lineTo(266, 280);
+ctx.stroke();
+
+// Sombrero
+ctx.fillRect(254, 257, 12, 4);
+
+// PIRATA 5
+
+// Cabeza
+ctx.beginPath();
+ctx.fillStyle = "#f4c2c2";
+ctx.arc(320, 264, 4, 0, Math.PI * 2);
+ctx.fill();
+
+// Pañuelo
+ctx.fillStyle = "#e10600";
+ctx.fillRect(316, 257, 8, 4);
+
+// Cuerpo
+ctx.beginPath();
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 2;
+ctx.moveTo(320, 268);
+ctx.lineTo(320, 277);
+ctx.stroke();
+
+// Brazos
+ctx.beginPath();
+ctx.moveTo(312, 271);
+ctx.lineTo(328, 271);
+ctx.stroke();
+
+// Piernas
+ctx.beginPath();
+ctx.moveTo(320, 277);
+ctx.lineTo(314, 280);
+
+ctx.moveTo(320, 277);
+ctx.lineTo(326, 280);
+ctx.stroke();
+
+// PIRATA 6
+
+// Cabeza
+ctx.beginPath();
+ctx.fillStyle = "#f4c2c2";
+ctx.arc(420, 254, 4, 0, Math.PI * 2);
+ctx.fill();
+
+// Pañuelo
+ctx.fillStyle = "#e10600";
+ctx.fillRect(416, 247, 8, 4);
+
+// Cuerpo
+ctx.beginPath();
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 2;
+ctx.moveTo(420, 258);
+ctx.lineTo(420, 267);
+ctx.stroke();
+
+// Brazos
+ctx.beginPath();
+ctx.moveTo(412, 261);
+ctx.lineTo(428, 261);
+ctx.stroke();
+
+// Piernas
+ctx.beginPath();
+ctx.moveTo(420, 267);
+ctx.lineTo(414, 270);
+
+ctx.moveTo(420, 267);
+ctx.lineTo(426, 270);
+ctx.stroke();
+
+// PIRATA 7
+
+// Cabeza
+ctx.beginPath();
+ctx.fillStyle = "#f4c2c2";
+ctx.arc(260, 154, 4, 0, Math.PI * 2);
+ctx.fill();
+
+// Cuerpo azul
+ctx.beginPath();
+ctx.strokeStyle = "#1f4e79";
+ctx.lineWidth = 3;
+ctx.moveTo(260, 158);
+ctx.lineTo(260, 167);
+ctx.stroke();
+
+// Brazos
+ctx.beginPath();
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 2;
+ctx.moveTo(252, 161);
+ctx.lineTo(268, 161);
+ctx.stroke();
+
+// Piernas
+ctx.beginPath();
+ctx.moveTo(260, 167);
+ctx.lineTo(254, 170);
+
+ctx.moveTo(260, 167);
+ctx.lineTo(266, 170);
+ctx.stroke();
+
+// PIRATA 8
+
+// Cabeza
+ctx.beginPath();
+ctx.fillStyle = "#f4c2c2";
+ctx.arc(330, 64, 4, 0, Math.PI * 2);
+ctx.fill();
+
+// Cuerpo azul
+ctx.beginPath();
+ctx.strokeStyle = "#1f4e79";
+ctx.lineWidth = 3;
+ctx.moveTo(330, 68);
+ctx.lineTo(330, 77);
+ctx.stroke();
+
+// Brazos
+ctx.beginPath();
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 2;
+ctx.moveTo(322, 71);
+ctx.lineTo(338, 71);
+ctx.stroke();
+
+// Piernas
+ctx.beginPath();
+ctx.moveTo(330, 77);
+ctx.lineTo(324, 80);
+
+ctx.moveTo(330, 77);
+ctx.lineTo(336, 80);
+ctx.stroke();
 
 }
