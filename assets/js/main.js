@@ -143,8 +143,8 @@ ctx.stroke();
     ctx.stroke();
 
     ctx.fillStyle = "#443d3d";
-   ctx.strokeStyle = "#494646";
-    ctx.lineWidth = 2;
+   ctx.strokeStyle = "#302d2d";
+    ctx.lineWidth = 4;
 ctx.beginPath();
 ctx.moveTo(390, 280);
 ctx.lineTo(485, 252);
@@ -313,15 +313,176 @@ ctx.stroke();
  ctx.closePath();
     ctx.fill();
 
+    // Velas
 
-    ctx.fillStyle = "#3d3a3a";
-   ctx.strokeStyle = "#3b3939";
-    ctx.lineWidth = 6;
+// ===============================
+// VELA RECTANGULAR central
+// ===============================
+
 ctx.beginPath();
-ctx.moveTo(350, 280);
-ctx.lineTo(350, 75);
+ctx.fillStyle = "#f4f1e8";  // Color beige claro
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
+
+// Punto superior izquierdo
+ctx.moveTo(200, 170);
+
+// Línea superior (recta)
+ctx.lineTo(280, 170);
+
+// Lado derecho curvado hacia adentro
+ctx.quadraticCurveTo(
+    310, 200,   // Punto de control (mete la curva hacia adentro)
+    280, 230    // Punto inferior derecho
+);
+
+// Línea inferior (recta)
+ctx.lineTo(200, 230);
+
+// Lado izquierdo curvado hacia adentro
+ctx.quadraticCurveTo(
+    220, 180,   // Punto de control (curva hacia adentro)
+    200, 170    // Regresa al inicio
+);
+
+ctx.closePath();
+ctx.fill();
 ctx.stroke();
- ctx.closePath();
-    ctx.fill();
+
+// ===============================
+// VELA RECTANGULAR izquierda
+// ===============================
+
+ctx.beginPath();
+ctx.fillStyle = "#f4f1e8";  // Color beige claro
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
+
+// Punto superior izquierdo
+ctx.moveTo(115, 150);
+
+// Línea superior (recta)
+ctx.lineTo(180, 150);
+
+// Lado derecho curvado hacia adentro
+ctx.quadraticCurveTo(
+    190, 180,   // Punto de control (mete la curva hacia adentro)
+    180, 200    // Punto inferior derecho
+);
+
+// Línea inferior (recta)
+ctx.lineTo(115, 200);
+
+// Lado izquierdo curvado hacia adentro
+ctx.quadraticCurveTo(
+    120, 190,   // Punto de control (curva hacia adentro)
+    120, 170    // Regresa al inicio
+);
+
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
+
+// ===============================
+// VELA RECTANGULAR izquierda superior
+// ===============================
+
+ctx.beginPath();
+ctx.fillStyle = "#f4f1e8";  // Color beige claro
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
+
+// Punto superior izquierdo
+ctx.moveTo(118, 100);
+
+// Línea superior (recta)
+ctx.lineTo(177, 100);
+
+// Lado derecho curvado hacia adentro
+ctx.quadraticCurveTo(
+    190, 125,   // Punto de control (mete la curva hacia adentro)
+    180, 138    // Punto inferior derecho
+);
+
+// Línea inferior (recta)
+ctx.lineTo(118, 138);
+
+// Lado izquierdo curvado hacia adentro
+ctx.quadraticCurveTo(
+    125, 138,   // Punto de control (curva hacia adentro)
+    125, 118    // Regresa al inicio
+);
+
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
+
+// ===============================
+// VELA RECTANGULAR central superior
+// ===============================
+
+ctx.beginPath();
+ctx.fillStyle = "#f4f1e8";  // Color beige claro
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
+
+// Punto superior izquierdo
+ctx.moveTo(200, 85);
+
+// Línea superior (recta)
+ctx.lineTo(280, 85);
+
+// Lado derecho curvado hacia adentro
+ctx.quadraticCurveTo(
+    300, 120,   // Punto de control (mete la curva hacia adentro)
+    280, 140    // Punto inferior derecho
+);
+
+// Línea inferior (recta)
+ctx.lineTo(200, 140);
+
+// Lado izquierdo curvado hacia adentro
+ctx.quadraticCurveTo(
+    210, 113,   // Punto de control (curva hacia adentro)
+    208, 110    // Regresa al inicio
+);
+
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
+
+// ===============================
+// VELA RECTANGULAR central superior al superior
+// ===============================
+
+ctx.beginPath();
+ctx.fillStyle = "#f4f1e8";  // Color beige claro
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
+
+// Punto superior izquierdo
+ctx.moveTo(220, 50);
+
+// Línea superior (recta)
+ctx.lineTo(230, 50);
+
+// Lado derecho curvado hacia adentro
+ctx.quadraticCurveTo(
+    280, 55,   // Punto de control (mete la curva hacia adentro)
+    270, 70    // Punto inferior derecho
+);
+
+// Línea inferior (recta)
+ctx.lineTo(200, 140);
+
+// Lado izquierdo curvado hacia adentro
+ctx.quadraticCurveTo(
+    210, 113,   // Punto de control (curva hacia adentro)
+    208, 110    // Regresa al inicio
+);
+
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
 
 }
