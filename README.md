@@ -1,29 +1,87 @@
-🔹 1. beginPath()
+Pirate Ship Canvas Project
 
-Inicia una nueva figura independiente en el canvas.
+Proyecto desarrollado en HTML5 + Canvas (JavaScript puro) donde se dibuja un barco pirata completamente usando coordenadas manuales.
 
-🔹 2. ellipse()
+Incluye:
 
-Se utiliza para dibujar formas ovaladas, ideales para simular alas orgánicas.
+⚓ Mástiles
 
-Parámetros usados:
+⛵ Velas
 
-x, y → posición central
+🏴 Banderas personalizadas
 
-radioX → ancho
+💀 Calavera pirata
 
-radioY → alto
+🏴‍☠️ Piratas 
 
-rotación → inclinación del ala
+📐 Posicionamiento exacto por coordenadas
 
-0, Math.PI*2 → círculo completo
 
-🔹 3. globalAlpha
+Todo el dibujo está hecho directamente con el contexto 2D del canvas:
 
-Permite generar efecto de transparencia para simular movimiento.
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
 
-🔹 4. fill() y stroke()
+🎯 Objetivo del Proyecto
 
-fill() rellena la figura
+Practicar:
 
-stroke() dibuja el contorno
+Uso del <canvas>
+
+Sistema de coordenadas X/Y
+
+Posicionamiento preciso por pixeles
+
+Escalado proporcional
+
+Dibujo con beginPath(), moveTo(), lineTo(), arc(), stroke() y fill()
+
+Control manual de tamaños (10px, 15px, 20px, etc.)
+
+
+🚀 Cómo Ejecutarlo
+
+Abrir el proyecto en Visual Studio Code
+
+Abrir index.html
+
+Ejecutar con:
+
+Live Server
+o
+
+Abrir directamente en el navegador
+
+🧠 Conceptos Aplicados
+
+Geometría básica
+
+Escalado proporcional
+
+Separación por distancia exacta
+
+Diseño pixel-art con Canvas
+
+Organización del dibujo por bloques
+
+📸 Vista del Proyecto
+
+El resultado es un barco pirata dibujado completamente con código, incluyendo personajes posicionados con precisión matemática.
+
+🔥 Posibles Mejoras Futuras
+
+Animación de piratas caminando
+
+Movimiento de bandera con viento
+
+Disparos de cañón
+
+Interacción con teclado
+
+Fondo animado (mar en movimiento)
+
+Refactorización en funciones reutilizables
+
+👨‍💻 Autor
+
+Proyecto desarrollado como práctica de dibujo en Canvas y control preciso de coordenadas. Jesús Roberto Hernández Benítez
