@@ -1,175 +1,357 @@
+/*
+=========================================
+PROYECTO: BARCO PIRATA EN CANVAS
+DOCUMENTACIÓN DE OBJETOS
+=========================================
+*/
+
 window.onload = function () {
 
+    // Obtenemos el elemento canvas por su ID
     const canvas = document.getElementById("miCanvas");
+
+    // Obtenemos el contexto 2D para poder dibujar
     const ctx = canvas.getContext("2d");
 
+
+    /*
+    ==================================================
+    OBJETO #1 – FONDO DEL CANVAS
+    ==================================================
+    Tipo: Rectángulo
+    Posición inicial: (0,0)
+    Ancho: 200px
+    Alto: 500px
+    Color: Blanco (#ffffff)
+    Función: Crear el fondo base del escenario
+    ==================================================
+    */
     ctx.fillStyle = "#ffffff";
     ctx.fillRect(0, 0, 200, 500);
 
+
+    // Llamamos a la función que dibuja el barco
     dibujarBarco(ctx);
 };
 
+
+
 function dibujarBarco(ctx) {
-    // Definimos el centro y radios del óvalo
+
+    /*
+    ==================================================
+    OBJETO #2 – CASCO DEL BARCO
+    ==================================================
+    Tipo: Semielipse (medio óvalo)
+    Centro: (250, 280)
+    Radio Horizontal (radioX): 140px
+    Radio Vertical (radioY): 110px
+    Color de relleno: Rojo (#e10600)
+    Borde: Negro
+    Grosor de línea: 1px
+    Ángulo inicial: 0 radianes
+    Ángulo final: Math.PI (180°)
+    Función: Representar la base estructural del barco
+    ==================================================
+    */
+
+    // Definimos el centro y radios del casco
     const centroX = 250;
     const centroY = 280;
     const radioX = 140; // Ancho del casco
     const radioY = 110; // Profundidad del casco
 
+    // Iniciamos trazo
     ctx.beginPath();
+
+    // Configuración de colores y borde
     ctx.fillStyle = "#e10600";
     ctx.strokeStyle = "#000000";
     ctx.lineWidth = 1;
 
-    /* Argumentos de ellipse:
-       (x, y, radioX, radioY, rotacion, anguloInicio, anguloFin)
+    /*
+    Argumentos de ellipse:
+    (x, y, radioX, radioY, rotacion, anguloInicio, anguloFin, sentido)
     */
     ctx.ellipse(
-        centroX, 
-        centroY, 
-        radioX, 
-        radioY, 
+        centroX,
+        centroY,
+        radioX,
+        radioY,
         0,           // Sin rotación
-        0,           // Empieza en el extremo derecho (0 radianes)
-        Math.PI,     // Termina en el extremo izquierdo (180 grados)
-        false        // Sentido de las agujas del reloj
+        0,           // Comienza en extremo derecho
+        Math.PI,     // Termina en extremo izquierdo
+        false        // Dirección normal (horario)
     );
 
-    // Cerramos la parte superior con una línea recta
-    ctx.closePath(); 
-    
+    // Cierra la figura con una línea recta superior
+    ctx.closePath();
+
+    // Rellena la figura
     ctx.fill();
+
+    // Dibuja el borde
     ctx.stroke();
 
 
-// funcion triangulo
+/*
+==================================================
+OBJETO #3 – Triángulo Superior Izquierdo
+Tipo: Triángulo
+Color: #a82828
+Borde: Negro (1px)
+Función: Parte decorativa/frontal del casco
+Coordenadas:
+(110,280) Punta superior
+(150,255) Base izquierda
+(185,280) Base derecha
+==================================================
+*/
 ctx.beginPath();
-    ctx.fillStyle = "#a82828"; 
-    ctx.strokeStyle = "#000000";
-    ctx.lineWidth = 1;
+ctx.fillStyle = "#a82828"; 
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
 
-    ctx.moveTo(110, 280);   // Punta superior
-    ctx.lineTo(150, 255);   // Base izquierda
-    ctx.lineTo(185, 280);   // Base derecha
+ctx.moveTo(110, 280);
+ctx.lineTo(150, 255);
+ctx.lineTo(185, 280);
 
-    ctx.closePath();
-    ctx.fill();
-    ctx.stroke();
-
-   // function triangulo2
-    ctx.beginPath();
-   ctx.fillStyle = "#e10600";
-   ctx.strokeStyle = "#000000";
-    ctx.lineWidth = 1;
-
-    ctx.moveTo(150, 255);
-    ctx.lineTo(110, 280);
-    ctx.lineTo(80, 255);
-
-    ctx.closePath();
-    ctx.fill();
-    ctx.stroke();
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
 
 
-    // function triangulo3
-    ctx.beginPath();
-    ctx.fillStyle = "#a82828"; 
-    ctx.strokeStyle = "#000000";
-    ctx.lineWidth = 1;
 
-    ctx.moveTo(80, 255);
-    ctx.lineTo(80, 280);
-    ctx.lineTo(110, 280);
+/*
+==================================================
+OBJETO #4 – Triángulo Superior Central
+Tipo: Triángulo
+Color: #e10600
+Borde: Negro (1px)
+Función: Extensión del diseño superior del casco
+Coordenadas:
+(150,255)
+(110,280)
+(80,255)
+==================================================
+*/
+ctx.beginPath();
+ctx.fillStyle = "#e10600";
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
 
-    ctx.closePath();
-    ctx.fill();
-    ctx.stroke();
+ctx.moveTo(150, 255);
+ctx.lineTo(110, 280);
+ctx.lineTo(80, 255);
 
-     // function triangulo junto al barco
-    ctx.beginPath();
-    ctx.fillStyle = "#a82828"; 
-    ctx.strokeStyle = "#000000";
-    ctx.lineWidth = 1;
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
 
-    ctx.moveTo(110, 290);
-    ctx.lineTo(80, 360);
-    ctx.lineTo(130, 360);
 
-    ctx.closePath();
-    ctx.fill();
-    ctx.stroke();
+
+/*
+==================================================
+OBJETO #5 – Triángulo Lateral Izquierdo
+Tipo: Triángulo
+Color: #a82828
+Borde: Negro (1px)
+Función: Cierre lateral del casco
+Coordenadas:
+(80,255)
+(80,280)
+(110,280)
+==================================================
+*/
+ctx.beginPath();
+ctx.fillStyle = "#a82828"; 
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
+
+ctx.moveTo(80, 255);
+ctx.lineTo(80, 280);
+ctx.lineTo(110, 280);
+
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
+
+
+
+/*
+==================================================
+OBJETO #6 – Triángulo Inferior Externo
+Tipo: Triángulo
+Color: #a82828
+Borde: Negro (1px)
+Función: Elemento decorativo junto al barco
+Coordenadas:
+(110,290)
+(80,360)
+(130,360)
+==================================================
+*/
+ctx.beginPath();
+ctx.fillStyle = "#a82828"; 
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
+
+ctx.moveTo(110, 290);
+ctx.lineTo(80, 360);
+ctx.lineTo(130, 360);
+
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
 
  // =====================
 // ANCLA
 // =====================
-    // function ancla
-    ctx.beginPath();
-   ctx.fillStyle = "#8b8b8b";
-   ctx.strokeStyle = "#000000";
-    ctx.lineWidth = 1;
 
-    ctx.moveTo(325, 325);
-    ctx.lineTo(350, 325);
-    ctx.lineTo(337, 335);
-
-    ctx.closePath();
-    ctx.fill();
-    ctx.stroke();
-
-
-    /* Círculo superior */
-    ctx.fillStyle = "#8b8b8b";
-   ctx.strokeStyle = "#000000";
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.arc(338, 307, 3, 0, Math.PI * 2);
-    ctx.stroke();
-     ctx.closePath();
-    ctx.fill();
-
-/* Línea vertical */
+/*
+==================================================
+OBJETO #7 – Base Inferior del Ancla
+Tipo: Triángulo
+Color: Gris (#8b8b8b)
+Borde: Negro (1px)
+Función: Parte inferior del ancla (soporte/base)
+Coordenadas:
+(325,325)
+(350,325)
+(337,335)
+==================================================
+*/
+ctx.beginPath();
 ctx.fillStyle = "#8b8b8b";
-   ctx.strokeStyle = "#929292";
-    ctx.lineWidth = 3;
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
+
+ctx.moveTo(325, 325);
+ctx.lineTo(350, 325);
+ctx.lineTo(337, 335);
+
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
+
+
+
+/*
+==================================================
+OBJETO #8 – Círculo Superior del Ancla
+Tipo: Círculo
+Centro: (338,307)
+Radio: 3px
+Color: Gris (#8b8b8b)
+Borde: Negro (1px)
+Función: Parte superior decorativa del ancla
+==================================================
+*/
+ctx.fillStyle = "#8b8b8b";
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
+
+ctx.beginPath();
+ctx.arc(338, 307, 3, 0, Math.PI * 2);
+ctx.stroke();
+ctx.closePath();
+ctx.fill();
+
+
+
+/*
+==================================================
+OBJETO #9 – Línea Vertical del Ancla
+Tipo: Línea
+Color: Gris oscuro (#929292)
+Grosor: 3px
+Función: Cuerpo principal del ancla
+Desde: (338,307)
+Hasta: (338,327)
+==================================================
+*/
+ctx.fillStyle = "#8b8b8b";
+ctx.strokeStyle = "#929292";
+ctx.lineWidth = 3;
+
 ctx.beginPath();
 ctx.moveTo(338, 307);
 ctx.lineTo(338, 327);
 ctx.stroke();
- ctx.closePath();
-    ctx.fill();
+ctx.closePath();
+ctx.fill();
 
-
-    // =====================
+// =====================
 // POPA (estructura gris)
 // =====================
- // function triangulo3
-    ctx.beginPath();
-    ctx.fillStyle = "#1f4fd1"; 
-    ctx.strokeStyle = "#000000";
-    ctx.lineWidth = 1;
 
-    ctx.moveTo(390, 280);
-    ctx.lineTo(460, 259);
-    ctx.lineTo(400, 310);
+/*
+==================================================
+OBJETO #10 – Estructura Principal de la Popa
+Tipo: Triángulo
+Color: Azul (#1f4fd1)
+Borde: Negro (1px)
+Función: Parte trasera elevada del barco
+Coordenadas:
+(390,280)
+(460,259)
+(400,310)
+==================================================
+*/
+ctx.beginPath();
+ctx.fillStyle = "#1f4fd1"; 
+ctx.strokeStyle = "#000000";
+ctx.lineWidth = 1;
 
-    ctx.closePath();
-    ctx.fill();
-    ctx.stroke();
+ctx.moveTo(390, 280);
+ctx.lineTo(460, 259);
+ctx.lineTo(400, 310);
 
-    ctx.fillStyle = "#443d3d";
-   ctx.strokeStyle = "#302d2d";
-    ctx.lineWidth = 4;
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
+
+
+
+/*
+==================================================
+OBJETO #11 – Línea Superior de la Popa
+Tipo: Línea
+Color: Gris oscuro (#302d2d)
+Grosor: 4px
+Función: Borde superior estructural
+Desde: (390,280)
+Hasta: (485,252)
+==================================================
+*/
+ctx.fillStyle = "#443d3d";
+ctx.strokeStyle = "#302d2d";
+ctx.lineWidth = 4;
+
 ctx.beginPath();
 ctx.moveTo(390, 280);
 ctx.lineTo(485, 252);
 ctx.stroke();
- ctx.closePath();
-    ctx.fill();
+ctx.closePath();
+ctx.fill();
 
 
-    // ===== MAR FILA TRASERA =====
 
-// Ola 1
+// =====================
+// MAR FILA TRASERA
+// =====================
+
+/*
+==================================================
+OBJETO #12 – Ola 1
+Tipo: Triángulo
+Color: #62aee0
+Coordenadas:
+(30,400)
+(80,360)
+(120,400)
+==================================================
+*/
 ctx.beginPath();
 ctx.fillStyle = "#62aee0";
 ctx.strokeStyle = "#000000";
@@ -182,7 +364,19 @@ ctx.closePath();
 ctx.fill();
 ctx.stroke();
 
-// Ola 2
+
+
+/*
+==================================================
+OBJETO #13 – Ola 2
+Tipo: Triángulo
+Color: #7ab6df
+Coordenadas:
+(105,400)
+(170,360)
+(222,400)
+==================================================
+*/
 ctx.beginPath();
 ctx.fillStyle = "#7ab6df";
 ctx.strokeStyle = "#000000";
@@ -195,7 +389,19 @@ ctx.closePath();
 ctx.fill();
 ctx.stroke();
 
-// Ola 3
+
+
+/*
+==================================================
+OBJETO #14 – Ola 3
+Tipo: Triángulo
+Color: #62cde0
+Coordenadas:
+(170,400)
+(270,350)
+(320,400)
+==================================================
+*/
 ctx.beginPath();
 ctx.fillStyle = "#62cde0";
 ctx.strokeStyle = "#000000";
@@ -208,7 +414,19 @@ ctx.closePath();
 ctx.fill();
 ctx.stroke();
 
-// Ola 4
+
+
+/*
+==================================================
+OBJETO #15 – Ola 4
+Tipo: Triángulo
+Color: #92e2f0
+Coordenadas:
+(280,400)
+(350,350)
+(400,400)
+==================================================
+*/
 ctx.beginPath();
 ctx.fillStyle = "#92e2f0";
 ctx.strokeStyle = "#000000";
@@ -221,7 +439,19 @@ ctx.closePath();
 ctx.fill();
 ctx.stroke();
 
-// Ola 5
+
+
+/*
+==================================================
+OBJETO #16 – Ola 5
+Tipo: Triángulo
+Color: #65a2e7
+Coordenadas:
+(360,400)
+(430,350)
+(480,400)
+==================================================
+*/
 ctx.beginPath();
 ctx.fillStyle = "#65a2e7";
 ctx.strokeStyle = "#000000";
@@ -234,9 +464,21 @@ ctx.closePath();
 ctx.fill();
 ctx.stroke();
 
-// ===== MAR FILA FRONTAL =====
+// =====================
+// MAR FILA FRONTAL
+// =====================
 
-// Ola 1
+/*
+==================================================
+OBJETO #17 – Ola Frontal 1
+Tipo: Triángulo
+Color: #1abc9c
+Coordenadas:
+(10,440)
+(83,380)
+(140,440)
+==================================================
+*/
 ctx.beginPath();
 ctx.fillStyle = "#1abc9c";
 ctx.strokeStyle = "#000000";
@@ -248,7 +490,19 @@ ctx.closePath();
 ctx.fill();
 ctx.stroke();
 
-// Ola 2
+
+
+/*
+==================================================
+OBJETO #18 – Ola Frontal 2
+Tipo: Triángulo
+Color: #2c97aa
+Coordenadas:
+(80,440)
+(165,375)
+(260,440)
+==================================================
+*/
 ctx.beginPath();
 ctx.fillStyle = "#2c97aa";
 ctx.strokeStyle = "#000000";
@@ -260,7 +514,19 @@ ctx.closePath();
 ctx.fill();
 ctx.stroke();
 
-// Ola 3
+
+
+/*
+==================================================
+OBJETO #19 – Ola Frontal 3
+Tipo: Triángulo
+Color: #1abc9c
+Coordenadas:
+(180,440)
+(270,380)
+(320,440)
+==================================================
+*/
 ctx.beginPath();
 ctx.fillStyle = "#1abc9c";
 ctx.strokeStyle = "#000000";
@@ -272,7 +538,19 @@ ctx.closePath();
 ctx.fill();
 ctx.stroke();
 
-// Ola 4
+
+
+/*
+==================================================
+OBJETO #20 – Ola Frontal 4
+Tipo: Triángulo
+Color: #248370
+Coordenadas:
+(230,440)
+(330,380)
+(410,440)
+==================================================
+*/
 ctx.beginPath();
 ctx.fillStyle = "#248370";
 ctx.strokeStyle = "#000000";
@@ -284,7 +562,19 @@ ctx.closePath();
 ctx.fill();
 ctx.stroke();
 
-// Ola 5
+
+
+/*
+==================================================
+OBJETO #21 – Ola Frontal 5
+Tipo: Triángulo
+Color: #48b889
+Coordenadas:
+(330,440)
+(430,380)
+(470,440)
+==================================================
+*/
 ctx.beginPath();
 ctx.fillStyle = "#48b889";
 ctx.strokeStyle = "#000000";
@@ -296,193 +586,258 @@ ctx.closePath();
 ctx.fill();
 ctx.stroke();
 
-//Mastiles
-ctx.fillStyle = "#3d3a3a";
-   ctx.strokeStyle = "#3b3939";
-    ctx.lineWidth = 4;
+/*
+==================================================
+OBJETO #22 – Mástil 1 (pequeño)
+Tipo: Línea vertical
+Grosor: 4px
+Desde: (80,255)
+Hasta: (80,210)
+==================================================
+*/
 ctx.beginPath();
+ctx.lineWidth = 4;
 ctx.moveTo(80, 255);
 ctx.lineTo(80, 210);
 ctx.stroke();
- ctx.closePath();
-    ctx.fill();
 
-    ctx.fillStyle = "#3d3a3a";
-   ctx.strokeStyle = "#3b3939";
-    ctx.lineWidth = 6;
+
+
+/*
+==================================================
+OBJETO #23 – Mástil 2
+Tipo: Línea vertical
+Grosor: 6px
+Desde: (150,255)
+Hasta: (150,75)
+==================================================
+*/
 ctx.beginPath();
+ctx.lineWidth = 6;
 ctx.moveTo(150, 255);
 ctx.lineTo(150, 75);
 ctx.stroke();
- ctx.closePath();
-    ctx.fill();
-     
-    ctx.fillStyle = "#3d3a3a";
-   ctx.strokeStyle = "#3b3939";
-    ctx.lineWidth = 6;
+
+
+
+/*
+==================================================
+OBJETO #24 – Mástil 3
+Tipo: Línea vertical
+Grosor: 6px
+Desde: (245,280)
+Hasta: (245,25)
+==================================================
+*/
 ctx.beginPath();
+ctx.lineWidth = 6;
 ctx.moveTo(245, 280);
 ctx.lineTo(245, 25);
 ctx.stroke();
- ctx.closePath();
-    ctx.fill();
 
 
-     ctx.fillStyle = "#3d3a3a";
-   ctx.strokeStyle = "#3b3939";
-    ctx.lineWidth = 6;
+
+/*
+==================================================
+OBJETO #25 – Mástil 4
+Tipo: Línea vertical
+Grosor: 6px
+Desde: (340,280)
+Hasta: (340,65)
+==================================================
+*/
 ctx.beginPath();
+ctx.lineWidth = 6;
 ctx.moveTo(340, 280);
 ctx.lineTo(340, 65);
 ctx.stroke();
- ctx.closePath();
-    ctx.fill();
 
-//SOGAS
-ctx.fillStyle = "#3d3a3a";
-   ctx.strokeStyle = "#3b3939";
-    ctx.lineWidth = 1;
+//SOGAS 
+/*
+==================================================
+OBJETO #26 – Soga 1
+Desde: (80,240) → (150,80)
+==================================================
+*/
 ctx.beginPath();
+ctx.lineWidth = 1;
 ctx.moveTo(80, 240);
 ctx.lineTo(150, 80);
 ctx.stroke();
- ctx.closePath();
-    ctx.fill();
 
-    ctx.fillStyle = "#3d3a3a";
-   ctx.strokeStyle = "#3b3939";
-    ctx.lineWidth = 1;
+
+
+/*
+OBJETO #27 – Soga 2
+Desde: (250,40) → (150,90)
+*/
 ctx.beginPath();
 ctx.moveTo(250, 40);
 ctx.lineTo(150, 90);
 ctx.stroke();
- ctx.closePath();
-    ctx.fill();
-ctx.fillStyle = "#3d3a3a";
-   ctx.strokeStyle = "#3b3939";
-    ctx.lineWidth = 1;
+
+
+
+/*
+OBJETO #28 – Soga 3
+Desde: (248,45) → (340,75)
+*/
 ctx.beginPath();
 ctx.moveTo(248, 45);
 ctx.lineTo(340, 75);
 ctx.stroke();
- ctx.closePath();
-    ctx.fill();
 
-    ctx.fillStyle = "#3d3a3a";
-   ctx.strokeStyle = "#3b3939";
-    ctx.lineWidth = 1;
+
+
+/*
+OBJETO #29 – Soga 4
+Desde: (170,270) → (250,90)
+*/
 ctx.beginPath();
 ctx.moveTo(170, 270);
 ctx.lineTo(250, 90);
 ctx.stroke();
- ctx.closePath();
-    ctx.fill();
 
-    ctx.fillStyle = "#3d3a3a";
-   ctx.strokeStyle = "#3b3939";
-    ctx.lineWidth = 1;
+
+
+/*
+OBJETO #30 – Soga 5
+Desde: (280,280) → (350,90)
+*/
 ctx.beginPath();
 ctx.moveTo(280, 280);
 ctx.lineTo(350, 90);
 ctx.stroke();
- ctx.closePath();
-    ctx.fill();
 
-    ctx.fillStyle = "#3d3a3a";
-   ctx.strokeStyle = "#3b3939";
-    ctx.lineWidth = 1;
+
+
+/*
+OBJETO #31 – Soga 6
+Desde: (365,280) → (400,230)
+*/
 ctx.beginPath();
 ctx.moveTo(365, 280);
 ctx.lineTo(400, 230);
 ctx.stroke();
- ctx.closePath();
-    ctx.fill();
 
-ctx.fillStyle = "#3d3a3a";
-   ctx.strokeStyle = "#3b3939";
-    ctx.lineWidth = 1;
+
+
+/*
+OBJETO #32 – Soga 7
+Desde: (400,165) → (340,110)
+*/
 ctx.beginPath();
 ctx.moveTo(400, 165);
 ctx.lineTo(340, 110);
 ctx.stroke();
- ctx.closePath();
-    ctx.fill();
 
-ctx.fillStyle = "#3d3a3a";
-   ctx.strokeStyle = "#3b3939";
-    ctx.lineWidth = 1;
+
+
+/*
+OBJETO #33 – Soga 8
+Desde: (460,230) → (485,253)
+*/
 ctx.beginPath();
 ctx.moveTo(460, 230);
 ctx.lineTo(485, 253);
 ctx.stroke();
- ctx.closePath();
-    ctx.fill();
 
-ctx.fillStyle = "#3d3a3a";
-   ctx.strokeStyle = "#3b3939";
-    ctx.lineWidth = 1;
+
+
+/*
+OBJETO #34 – Soga 9
+Desde: (485,253) → (338,70)
+*/
 ctx.beginPath();
 ctx.moveTo(485, 253);
 ctx.lineTo(338, 70);
 ctx.stroke();
- ctx.closePath();
-    ctx.fill();
 
 // ===============================
-// VELA RECTANGULAR central
+// VELA RECTANGULAR CENTRAL
 // ===============================
 
+/*
+==================================================
+OBJETO #35 – Vela Central
+Tipo: Forma personalizada (curvas + líneas)
+Color: #f4f1e8
+Función: Vela principal del barco
+==================================================
+*/
 ctx.beginPath();
-ctx.fillStyle = "#f4f1e8";  // Color beige claro
+ctx.fillStyle = "#f4f1e8";
 ctx.strokeStyle = "#000000";
 ctx.lineWidth = 1;
 
-// Punto superior izquierdo
 ctx.moveTo(200, 170);
-
-// Línea superior (recta)
 ctx.lineTo(280, 170);
 
-// Lado derecho curvado hacia adentro
-ctx.quadraticCurveTo(
-    310, 200,   // Punto de control (mete la curva hacia adentro)
-    280, 230    // Punto inferior derecho
-);
-
-// Línea inferior (recta)
+ctx.quadraticCurveTo(310, 200, 280, 230);
 ctx.lineTo(200, 230);
-
-// Lado izquierdo curvado hacia adentro
-ctx.quadraticCurveTo(
-    210, 190,   // Punto de control (curva hacia adentro)
-    200, 170    // Regresa al inicio
-);
+ctx.quadraticCurveTo(210, 190, 200, 170);
 
 ctx.closePath();
 ctx.fill();
 ctx.stroke();
 
-// Cabeza
+
+
+/*
+==================================================
+OBJETO #36 – Cabeza Calavera
+Tipo: Círculo
+Centro: (240,195)
+Radio: 18
+==================================================
+*/
 ctx.beginPath();
 ctx.fillStyle = "#ffffff";
-ctx.strokeStyle = "#000000";
-ctx.lineWidth = 1;
-
 ctx.arc(240, 195, 18, 0, Math.PI * 2);
 ctx.fill();
 ctx.stroke();
 
-// Ojo izquierdo
+
+
+/*
+==================================================
+OBJETO #37 – Ojo Izquierdo
+Tipo: Círculo
+Centro: (232,192)
+Radio: 4
+==================================================
+*/
 ctx.beginPath();
 ctx.fillStyle = "#000000";
 ctx.arc(232, 192, 4, 0, Math.PI * 2);
 ctx.fill();
 
-// Ojo derecho
+
+
+/*
+==================================================
+OBJETO #38 – Ojo Derecho
+Tipo: Círculo
+Centro: (248,192)
+Radio: 4
+==================================================
+*/
 ctx.beginPath();
 ctx.arc(248, 192, 4, 0, Math.PI * 2);
 ctx.fill();
 
+
+
+/*
+==================================================
+OBJETO #39 – Nariz
+Tipo: Triángulo
+Coordenadas:
+(240,198)
+(235,205)
+(245,205)
+==================================================
+*/
 ctx.beginPath();
 ctx.moveTo(240, 198);
 ctx.lineTo(235, 205);
@@ -490,14 +845,30 @@ ctx.lineTo(245, 205);
 ctx.closePath();
 ctx.fill();
 
-// Base dientes
+
+
+/*
+==================================================
+OBJETO #40 – Base de Dientes
+Tipo: Rectángulo
+Posición: (230,205)
+Tamaño: 20x8
+==================================================
+*/
 ctx.beginPath();
 ctx.fillStyle = "#ffffff";
 ctx.rect(230, 205, 20, 8);
 ctx.fill();
 ctx.stroke();
 
-// Separaciones dientes
+
+
+/*
+==================================================
+OBJETO #41 – Separaciones de Dientes
+Tipo: Líneas verticales
+==================================================
+*/
 ctx.beginPath();
 ctx.moveTo(235, 205);
 ctx.lineTo(235, 213);
@@ -510,155 +881,159 @@ ctx.lineTo(245, 213);
 
 ctx.stroke();
 
-ctx.strokeStyle = "#000000";
-ctx.lineWidth = 2;
 
-// Hueso 1
+
+/*
+==================================================
+OBJETO #42 – Hueso Cruzado 1
+Tipo: Línea
+Desde: (220,215) → (260,180)
+==================================================
+*/
 ctx.beginPath();
+ctx.lineWidth = 2;
 ctx.moveTo(220, 215);
 ctx.lineTo(260, 180);
 ctx.stroke();
 
-// Hueso 2
+
+
+/*
+==================================================
+OBJETO #43 – Hueso Cruzado 2
+Tipo: Línea
+Desde: (220,180) → (260,215)
+==================================================
+*/
 ctx.beginPath();
 ctx.moveTo(220, 180);
 ctx.lineTo(260, 215);
 ctx.stroke();
+
 // ===============================
-// VELA RECTANGULAR izquierda
+// VELA RECTANGULAR IZQUIERDA
 // ===============================
 
+/*
+==================================================
+OBJETO #44 – Vela Izquierda Inferior
+Tipo: Forma personalizada (curvas + líneas)
+Color: #f4f1e8
+Función: Vela lateral inferior izquierda
+==================================================
+*/
 ctx.beginPath();
-ctx.fillStyle = "#f4f1e8";  // Color beige claro
+ctx.fillStyle = "#f4f1e8";
 ctx.strokeStyle = "#000000";
 ctx.lineWidth = 1;
 
-// Punto superior izquierdo
 ctx.moveTo(115, 150);
-
-// Línea superior (recta)
 ctx.lineTo(180, 150);
-
-// Lado derecho curvado hacia adentro
-ctx.quadraticCurveTo(
-    190, 180,   // Punto de control (mete la curva hacia adentro)
-    180, 200    // Punto inferior derecho
-);
-
-// Línea inferior (recta)
+ctx.quadraticCurveTo(190, 180, 180, 200);
 ctx.lineTo(115, 200);
-
-// Lado izquierdo curvado hacia adentro
-ctx.quadraticCurveTo(
-    120, 190,   // Punto de control (curva hacia adentro)
-    120, 170    // Regresa al inicio
-);
+ctx.quadraticCurveTo(120, 190, 120, 170);
 
 ctx.closePath();
 ctx.fill();
 ctx.stroke();
 
+
+
 // ===============================
-// VELA RECTANGULAR izquierda superior
+// VELA RECTANGULAR IZQUIERDA SUPERIOR
 // ===============================
 
+/*
+==================================================
+OBJETO #45 – Vela Izquierda Superior
+Tipo: Forma personalizada
+Color: #f4f1e8
+Función: Vela lateral superior izquierda
+==================================================
+*/
 ctx.beginPath();
-ctx.fillStyle = "#f4f1e8";  // Color beige claro
+ctx.fillStyle = "#f4f1e8";
 ctx.strokeStyle = "#000000";
 ctx.lineWidth = 1;
 
-// Punto superior izquierdo
 ctx.moveTo(118, 100);
-
-// Línea superior (recta)
 ctx.lineTo(177, 100);
-
-// Lado derecho curvado hacia adentro
-ctx.quadraticCurveTo(
-    190, 125,   // Punto de control (mete la curva hacia adentro)
-    180, 138    // Punto inferior derecho
-);
-
-// Línea inferior (recta)
+ctx.quadraticCurveTo(190, 125, 180, 138);
 ctx.lineTo(118, 138);
-
-// Lado izquierdo curvado hacia adentro
-ctx.quadraticCurveTo(
-    125, 138,   // Punto de control (curva hacia adentro)
-    125, 118    // Regresa al inicio
-);
+ctx.quadraticCurveTo(125, 138, 125, 118);
 
 ctx.closePath();
 ctx.fill();
 ctx.stroke();
 
+
+
 // ===============================
-// VELA RECTANGULAR central superior
+// VELA RECTANGULAR CENTRAL SUPERIOR
 // ===============================
 
+/*
+==================================================
+OBJETO #46 – Vela Central Superior
+Tipo: Forma personalizada
+Color: #e10600
+Función: Vela decorativa superior central
+==================================================
+*/
 ctx.beginPath();
-ctx.fillStyle = "#e10600"
+ctx.fillStyle = "#e10600";
 ctx.strokeStyle = "#000000";
 ctx.lineWidth = 1;
 
-// Punto superior izquierdo
 ctx.moveTo(200, 85);
-
-// Línea superior (recta)
 ctx.lineTo(280, 85);
-
-// Lado derecho curvado hacia adentro
-ctx.quadraticCurveTo(
-    300, 120,   // Punto de control (mete la curva hacia adentro)
-    280, 140    // Punto inferior derecho
-);
-
-// Línea inferior (recta)
+ctx.quadraticCurveTo(300, 120, 280, 140);
 ctx.lineTo(200, 140);
-
-// Lado izquierdo curvado hacia adentro
-ctx.quadraticCurveTo(
-    210, 113,   // Punto de control (curva hacia adentro)
-    208, 110    // Regresa al inicio
-);
+ctx.quadraticCurveTo(210, 113, 208, 110);
 
 ctx.closePath();
 ctx.fill();
 ctx.stroke();
 
+
+
+/*
+==================================================
+OBJETO #47 – Decoración Blanca Izquierda
+Tipo: Forma personalizada
+Color: Blanco
+Función: Detalle decorativo interno
+==================================================
+*/
 ctx.beginPath();
 ctx.fillStyle = "#ffffff";
 
-// Parte superior
 ctx.moveTo(220, 85);
 ctx.lineTo(235, 85);
-
-// Curva derecha interna
 ctx.quadraticCurveTo(245, 120, 235, 140);
-
-// Parte inferior
 ctx.lineTo(220, 140);
-
-// Curva izquierda interna
 ctx.quadraticCurveTo(230, 113, 220, 85);
 
 ctx.closePath();
 ctx.fill();
 
+
+
+/*
+==================================================
+OBJETO #48 – Decoración Blanca Derecha
+Tipo: Forma personalizada
+Color: Blanco
+Función: Segundo detalle decorativo interno
+==================================================
+*/
 ctx.beginPath();
 ctx.fillStyle = "#ffffff";
 
-// Parte superior
 ctx.moveTo(250, 85);
 ctx.lineTo(265, 85);
-
-// Curva derecha interna
 ctx.quadraticCurveTo(275, 120, 265, 140);
-
-// Parte inferior
 ctx.lineTo(250, 140);
-
-// Curva izquierda interna
 ctx.quadraticCurveTo(260, 113, 250, 85);
 
 ctx.closePath();
